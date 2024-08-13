@@ -9,7 +9,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { getSpaces } from "./GetSpaces";
 import { updateSpace } from "./UpdateSpace";
 import { deleteSpace } from "./DeleteSpace";
-import { MissingFieldError } from "../shared/Validator";
+import { JsonError, MissingFieldError } from "../shared/Validator";
 
 const ddbClient = new DynamoDBClient({});
 
@@ -41,6 +41,12 @@ async function handler(
     }
   } catch (error) {
     if (error instanceof MissingFieldError) {
+      return {
+        statusCode: 400,
+        body: error.message,
+      };
+    }
+    if (error instanceof JsonError) {
       return {
         statusCode: 400,
         body: error.message,
