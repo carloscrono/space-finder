@@ -3,8 +3,21 @@ GET https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces
 
 POST https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces
 content-type: application/json
+ 
+ {
+    "location": "San Salvador",
+    "name": "Best Sivar"
+ }
+###
+
+PUT https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces?id=ac2b0dda-209f-48ea-a847-193457475e8b
+content-type: application/json
 
  {
-    "location": "Paris"
+    "location": "Sivar",
+    "name": "Best City"
  }
+###
+
+DELETE https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces?id=a96e7a0a-a370-48a9-a44f-6c5674ce0dc9
 ###
