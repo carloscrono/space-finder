@@ -1,0 +1,10 @@
+GET https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces
+###
+
+POST https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/spaces
+content-type: application/json
+
+ {
+    "location": "Paris"
+ }
+###
