@@ -5,13 +5,13 @@ process.env.TABLE_NAME = "SpaceTable-0e0609817685";
 
 handler(
   {
-    httpMethod: "PUT",
+    httpMethod: "DELETE",
     queryStringParameters: {
       id: "5fc1b1d0-a954-4056-ae54-0f83356de137",
     },
-    body: JSON.stringify({
-      location: "San Salvador",
-    }),
+    // body: JSON.stringify({
+    //   location: "San Salvador",
+    // }),
   } as any,
   {} as any
 );
