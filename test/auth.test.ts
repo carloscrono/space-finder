@@ -4,6 +4,8 @@ async function testAuth() {
   const service = new AuthService();
   const loginResult = await service.login("carloscrono", "sdf45Aaf574fg$");
   const idToken = await service.getIdToken();
+  console.log(idToken);
+  console.log(loginResult);
 }
 
 testAuth();
