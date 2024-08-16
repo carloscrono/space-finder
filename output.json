@@ -14,5 +14,8 @@
   },
   "ApiStack": {
     "SpacesApiEndpoint36C4F3B6": "https://2zf1pgchgd.execute-api.us-east-1.amazonaws.com/prod/"
+  },
+  "UIDeploymentStack": {
+    "SpaceFinderUrl": "d12pa1stinh5de.cloudfront.net"
   }
 }
