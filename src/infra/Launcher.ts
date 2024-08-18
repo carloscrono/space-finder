@@ -10,10 +10,12 @@ const dataStack = new DataStack(app, "DataStack");
 const lambdaStack = new LambdaStack(app, "LambdaStack", {
   spacesTable: dataStack.spacesTable,
 });
-const authStack = new AuthStack(app, "AuthStack");
+const authStack = new AuthStack(app, "AuthStack", {
+  photosBucket: dataStack.photosBucket,
+});
 new ApiStack(app, "ApiStack", {
   spacesLambdaIntegration: lambdaStack.spacesLambdaIntegration,
   userPool: authStack.userPool,
 });
 
-new UIDeploymentStack(app, 'UIDeploymentStack');
+new UIDeploymentStack(app, "UIDeploymentStack");
