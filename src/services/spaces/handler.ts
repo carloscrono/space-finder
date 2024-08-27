@@ -11,8 +11,12 @@ import { updateSpace } from "./UpdateSpace";
 import { deleteSpace } from "./DeleteSpace";
 import { JsonError, MissingFieldError } from "../shared/Validator";
 import { addCorsHeader } from "../shared/Utils";
+import { captureAWSv3Client } from 'aws-xray-sdk-core'
+import { resolve } from "path";
 
-const ddbClient = new DynamoDBClient({});
+const ddbClient = captureAWSv3Client(new DynamoDBClient({}));
+
+
 
 async function handler(
   event: APIGatewayProxyEvent,
