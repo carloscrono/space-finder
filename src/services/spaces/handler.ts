@@ -23,11 +23,11 @@ async function handler(
 ): Promise<APIGatewayProxyResult> {
   let response: APIGatewayProxyResult;
 
-  const subSeg = getSegment().addNewSubsegment('MyLongCall');
+  const subSeg = getSegment().addNewSubsegment('LongCall');
   await new Promise(resolve => { setTimeout(resolve, 3000) });
   subSeg.close();
 
-  const subSeg2 = getSegment().addNewSubsegment('MyLongCall');
+  const subSeg2 = getSegment().addNewSubsegment('ShortCall');
   await new Promise(resolve => { setTimeout(resolve, 500) });
   subSeg2.close();
 
